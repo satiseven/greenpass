@@ -1,4 +1,4 @@
 export interface GreenType {
   passportNum: number;
-  passportVal: (passnum: number) => void;
+  passportValidation: (passnum: number) => void;
 }
