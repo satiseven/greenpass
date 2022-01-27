@@ -32,8 +32,18 @@ class Employee extends Person {
     return new Employee(name, 1);
   }
 }
-let emp: Person = new Employee("James", 100);
-emp.display(); //James
+class Circle {
+  static pi: number = 3.14;
 
-let emp2: Person = emp.find("Steve");
-emp2.display();
+  static calculateArea(radius: number) {
+    return this.pi * radius * radius;
+  }
+}
+Circle.pi = 100; // returns 3.14
+console.log(Circle.calculateArea(5));
+let mine: string[] = ["m", "g", "q", "f", "s"];
+console.log(mine.slice(4));
+console.log(mine);
+
+console.log(mine.splice(2, 2));
+console.log(mine);
