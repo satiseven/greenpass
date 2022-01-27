@@ -9,5 +9,31 @@ class greenClass implements GreenType {
     console.log(passnum);
   }
 }
-let mixMe = new greenClass();
-mixMe.passportValidation(15 * 24);
+
+abstract class Person {
+  name: string;
+  constructor(name: string) {
+    console.log("new Con");
+
+    this.name = name;
+  }
+  display(): void {
+    console.log(this.name);
+  }
+  abstract find(name: string): Person;
+}
+class Employee extends Person {
+  empCode: number;
+  constructor(name: string, code: number) {
+    super(name);
+    this.empCode = code;
+  }
+  find(name: string): Person {
+    return new Employee(name, 1);
+  }
+}
+let emp: Person = new Employee("James", 100);
+emp.display(); //James
+
+let emp2: Person = emp.find("Steve");
+emp2.display();
