@@ -57,7 +57,10 @@ class Rectangle {
     this._age = num;
   }
 }
+function genericsFunc<T>(items: T[]): T[] {
+  return new Array<T>().concat(items);
+}
 let rec = new Rectangle();
-console.log(rec.age);
-rec.age = 90;
-console.log(rec.age);
+let ser = genericsFunc<number>([1, 5]);
+
+console.log(genericsFunc<string>(["main", "second"]));
