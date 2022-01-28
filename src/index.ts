@@ -42,8 +42,22 @@ class Circle {
 Circle.pi = 100; // returns 3.14
 console.log(Circle.calculateArea(5));
 let mine: string[] = ["m", "g", "q", "f", "s"];
-console.log(mine.slice(4));
-console.log(mine);
 
-console.log(mine.splice(2, 2));
-console.log(mine);
+class Rectangle {
+  private _age: number;
+  private _firstname: string;
+  constructor() {
+    this._age = 0;
+    this._firstname = "main";
+  }
+  public get age() {
+    return this._age;
+  }
+  public set age(num: number) {
+    this._age = num;
+  }
+}
+let rec = new Rectangle();
+console.log(rec.age);
+rec.age = 90;
+console.log(rec.age);
